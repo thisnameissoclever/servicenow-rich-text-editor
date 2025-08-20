@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "ServiceNow Journal RTE",
+  "description": "Replace ServiceNow journal textareas with a rich text editor that renders supported HTML and syncs back to enable Post.",
+  "version": "0.1.0",
+  "permissions": [],
+  "host_permissions": [
+    "https://*.service-now.com/*"
+  ],
+  "content_scripts": [
+    {
+  "matches": ["https://*.service-now.com/*", "file:///*"],
+      "js": ["src/logger.js", "src/sanitize.js", "src/editor.js", "src/content.js"],
+      "css": ["styles/content.css"],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
+  "icons": {
+    "16": "assets/icon16.png",
+    "32": "assets/icon32.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  }
+}

@@ -1,0 +1,78 @@
+/* Styles for the inline rich text editor wrapper and toolbar */
+
+.snjrte-hidden {
+  display: none !important;
+}
+
+.snjrte-wrapper {
+  position: relative;
+}
+
+.snjrte-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 6px 8px;
+  border: 1px solid #d1d1d1;
+  border-bottom: none;
+  background: #f9fafb;
+  border-radius: 6px 6px 0 0;
+}
+
+.snjrte-toolbar button {
+  appearance: none;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  background: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.snjrte-toolbar button:hover {
+  background: #f0f0f0;
+}
+
+.snjrte-editor {
+  min-height: 80px;
+  outline: none;
+  padding: 8px 8px 8px 12px; /* extra left padding to avoid overlap with SN decorator bar */
+  border: 1px solid #d1d1d1;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  background: white;
+}
+
+/* Match ServiceNow text area look closely when possible */
+.snjrte-editor.is-empty:not(:focus)::before {
+  content: attr(data-placeholder);
+  color: #888;
+  pointer-events: none;
+}
+
+/* Code block styling */
+.snjrte-editor pre {
+  background: #0b1021;
+  color: #e6e6e6;
+  padding: 8px 10px;
+  border-radius: 4px;
+  overflow: auto;
+}
+
+.snjrte-editor code {
+  background: #f2f4f7;
+  color: #1f2937;
+  padding: 1px 4px;
+  border-radius: 4px;
+}
+
+.snjrte-editor blockquote {
+  border-left: 4px solid #d1d5db;
+  margin: 0.5em 0;
+  padding: 0.25em 0.75em;
+  color: #374151;
+  background: #f9fafb;
+}
