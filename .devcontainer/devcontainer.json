@@ -1,0 +1,26 @@
+{
+  "name": "ServiceNow Rich Text Editor",
+  "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:18",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscode.json-language-features",
+        "ms-vscode.references-view",
+        "aaravb.chrome-extension-developer-tools",
+        "JoeRidyard.chrome-extension-zipper"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "files.associations": {
+          "*.json": "jsonc"
+        }
+      }
+    }
+  },
+  "forwardPorts": [3000, 8080],
+  "postCreateCommand": "echo 'Chrome Extension Development Environment Ready! 🚀'",
+  "remoteUser": "node"
+}
